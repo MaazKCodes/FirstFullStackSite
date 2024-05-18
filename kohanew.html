@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koha</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .here { color: #FF0000;}
+    /* Footer Styling */
+    footer {
+      background-color: #343a40;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Form Styling */
+    #form-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    #form {
+      border: 5px solid black;
+      padding: 2rem;
+      background-color: white;
+    }
+  </style>
+  <script>
+     var image_1 = new Image(100, 100);
+    image_1.src = "koha.jpg";
+    var image_1_over = new Image(100, 100);
+    image_1_over.src = "sourceopen.jpg";
+
+    function textToDisplay(radioValue) {
+      var displayText = "";
+      if (radioValue == "twin") {
+        displayText = "Why not?";
+      } else if (radioValue == "deluxe") {
+        displayText = "How could Koha get even better?";
+      } else if (radioValue == "queen") {
+        displayText = "Thank you for your input!";
+      } else if (radioValue == "king") {
+        displayText = "Whipee! Glad you love it as much as I do!";
+      }
+      return displayText;
+    }
+
+    function modifyDOM(radioInput) {
+      var displayText = textToDisplay(radioInput.value);
+      var infoNode = document.getElementById("info");
+
+      if (infoNode === null) {
+        var node = document.createElement("DIV");
+        node.setAttribute("id", "info");
+        node.className = "form-text infoText";
+        var textnode = document.createTextNode(displayText);
+        node.appendChild(textnode);
+        radioInput.parentElement.appendChild(node);
+      } else {
+        infoNode.innerHTML = displayText;
+      }
+    }
+
+    function checkboxesSelected(checkboxes, errorString) {
+      var cbSelected = 0;
+      for (i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          cbSelected += 1;
+        }
+      }
+
+      if (cbSelected < 2) {
+        return errorString;
+      } else {
+        return "";
+      }
+    }
+
+    function validate(formXYZ) {
+      var fail = "";
+      fail += checkboxesSelected(formXYZ.elements.bed_extras, "At least TWO Extras need to be selected.\n");
+      if (fail == "") return true;
+      else {
+        alert(fail);
+        return false;
+      }
+    }
+  </script>
+    <style>
+        .responsive-image {
+          width: 50%;
+          height: auto;
+          object-fit: cover;
+        }
+        main {
+          margin-bottom: 2rem;
+        }
+      </style>
+</head>
+<body>
+  <nav id="navbar-site" class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Maaz Khalil's IT Website - Koha Survey</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ml-sm-auto">
+      <a class="nav-item nav-link" href="homepage.html">Home</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" id="services-dropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info-Tech</a>
+        <div class="dropdown-menu" aria-labelledby="services-dropdown">
+          <a class="dropdown-item" href="infotech.html">Overview</a>
+          <a class="dropdown-item here" href="kohanew.html">Koha ILS</a>
+          <a class="dropdown-item" href="formpage.html">Info Tech Tools</a>
+          <a class="dropdown-item" href="formpageresults.php">Tools Survey Results</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" id="services-dropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Interests</a>
+        <div class="dropdown-menu" aria-labelledby="services-dropdown">
+         <a class="dropdown-item" href="interestsmain.html">NJ Wildlife</a>
+          <a class="dropdown-item" href="interestsbear.html">Bears</a>
+          <a class="dropdown-item" href="interestswolf.html">Wolves</a>
+          <a class="dropdown-item" href="interestsfox.html">Foxes</a>
+        </div>
+      </div>
+      <a class="nav-item nav-link" href="aboutme.html">About</a>
+    </div>
+  </div>
+</div>
+</nav>
+<main>
+    <div class="container">
+      <h1>Open Source Report - Koha ILS</h1>
+      <figure class="responsive-image">
+        <img src="koha.jpg" name="img2" width="50%" class="img-fluid"
+             onmouseover="document.img2.src = image_1_over.src"
+             onmouseout="document.img2.src = image_1.src">
+      </figure>      
+    </div>
+</div>
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-9 col-md-8">
+        <h1 class="m-3">The World's First Free and Open Source Library System</h1>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <h2>What Is Koha?</h2>
+            <p>Koha ILS, an open-source integrated library system, revolutionizes the way libraries manage their resources and engage with patrons. By seamlessly streamlining tasks such as cataloguing, circulation, and patron management, Koha ensures that library staff can efficiently provide the best possible services. At the heart of this transformation lies the user-centric design, which puts the patron experience front and center. Koha ILS empowers libraries to become dynamic hubs of knowledge, fostering an environment where discovery and learning flourish. In essence, Koha ILS stands as a testament to the evolving relationship between information and its users, championing the importance of accessibility and adaptability in today's fast-paced world.</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h2>One Way It's Useful</h2>
+            <p>One intriguing use of Koha ILS is its ability to support the integration of digital resources alongside traditional print materials. Through a unified search interface, patrons can easily discover and access a wide range of multimedia content, including e-books, audiobooks, and online databases. By offering a cohesive experience, Koha ensures that libraries can adapt to the evolving needs of their users while staying true to their core mission of providing access to valuable information.</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h2>Another Way It's Useful</h2>
+            <p>Another noteworthy aspect of Koha ILS is its utilization of community-driven development, which allows libraries to actively participate in shaping the platform. Thanks to its open-source nature, libraries can collaborate with developers, contribute their own enhancements, and share their solutions with the larger Koha community. This collaborative approach fosters a sense of ownership and pride among library staff, as they can directly influence the platform's growth and see their ideas brought to life. Moreover, it ensures that Koha ILS remains at the forefront of innovation, as it continually evolves to meet the unique and diverse requirements of libraries around the globe.</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h2>How Big Is Koha?</h2>
+            <p>Koha ILS has gained significant traction since its inception, with a thriving global community that spans over 200 countries and thousands of libraries, ranging from small local institutions to large-scale university systems. As a testament to its growing popularity, the software has been translated into more than 30 languages, demonstrating its widespread appeal and adaptability. With an active community of developers, librarians, and users constantly working to improve and expand its capabilities, Koha ILS stands as a leading choice for libraries seeking a versatile, user-friendly, and collaborative integrated library system.</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h2>The Open Source Debate</h2>
+            <p>The open-source debate weighs the pros and cons of using such tools. Advantages include cost-effectiveness, customizability, and community-driven innovation. Disadvantages involve potential security risks and lack of professional support. Choosing open-source depends on an organization's priorities and resources.</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h2>Koha; The Pros & Cons</h2>
+            <p>Koha ILS boasts cost-effectiveness, flexibility, and user-centric design. However, it may require technical expertise for customization and relies
+                on community support. Weighing these factors, many libraries still find Koha ILS to be a popular and suitable choice for institutions seeking a versatile and collaborative integrated library system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="form-container">
+    <form id="form" method="post" action="mailto:mnk68@rutgers.edu" onsubmit="return validate(this)">
+  <fieldset id="personal" class="form-group">
+    <legend>Personal Data</legend>
+    <div class="form-inline">
+      <label for="firstname" class="mr-sm-2">First Name:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="firstname" name="firstname" placeholder="Enter First Name" required="">
+      <label for="lastname" class="mr-sm-2">Last Name:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="lastname" name="lastname" placeholder="Enter Last Name" required="">
+    </div>
+    <div class="form-inline">
+      <label for="email" class="mr-sm-2">Email:</label>
+      <input type="email" class="form-control mb-2 mr-sm-2" id="email" name="email" placeholder="Enter Email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+  
+      <label for="state" class="mr-sm-2">State:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="state" name="state" placeholder="Enter Two Letter State" pattern="[A-Za-z]{2}" title="State needs to be TWO Letters" required="">
+    </div>
+    <div class="form-inline">
+      <label for="zipcode" class="mr-sm-2">Zipcode:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="zipcode" name="zipcode" placeholder="Enter Zipcode" pattern="[0-9]{5}" title="Zipcode needs to be 5 digits" required="">
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Koha Review</legend>
+    <label>How Useful Do You Think Koha Is?</label>
+    <div id="radioButtons" class="form-group">
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="bed_size" value="twin" required="" onclick="modifyDOM(this)">
+          Not Useful
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="bed_size" value="deluxe" required="" onclick="modifyDOM(this)">
+          Somewhat Useful
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="bed_size" value="queen" required="" onclick="modifyDOM(this)">
+          Useful
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="bed_size" value="king" required="" onclick="modifyDOM(this)">
+          An Absolute Boon!
+        </label>
+      </div>
+    </div>
+    <label>Which Of These Industries Would Benefit From Using Koha? (Must Pick At Least 2) </label>
+    <div id="checkboxes" class="form-group">
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="bed_extras" value="foot">
+          Library Industry
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="bed_extras" value="drawers">
+          Pharmaceutical Industry
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="bed_extras" value="headboard">
+          Law Firm Industry
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="bed_extras" value="ottoman">
+          Non-Profit Industry
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <input type="submit" value="Submit" name="submit">
+  <input type="reset" value="Reset" name="reset">
+</form>
+</div>
+</main>
+<footer class="bg-dark text-white py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 Maaz Khalil's IT Website. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-right">
+          <p><a href="#" class="text-white">Home</a> | <a href="#" class="text-white">Info-Tech</a> | <a href="#" class="text-white">Interests</a> | <a href="#" class="text-white">About</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>    

@@ -1,0 +1,140 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style media="screen">
+                .here { color: #FF0000 !important; }
+      aside {
+          float: right;
+          text-align: center;
+          background-color: lightgreen;
+          border-width:thin;
+          border-style:solid;
+          border-color: red;
+      }   
+    </style>
+     <script>
+      var image_1 = new Image(768, 1024);
+      image_1.src = "majesty.JPG";
+      var image_1_over = new Image(768, 1024);
+      image_1_over.src = "tubby.jpg";
+      var image_2 = new Image(768, 1024);
+      image_2.src = "naturr.jpg";
+      var image_2_over = new Image(768, 1024);
+      image_2_over.src = "turtles.jpg";
+      </script>
+    <title>About Me</title>
+</head>
+<body class="center">
+  <nav id="navbar-site" class="navbar navbar-dark bg-dark navbar-expand-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">Maaz Khalil's IT Website - About Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ml-sm-auto">
+            <a class="nav-item nav-link" href="homepage.html">Home</a>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="services-dropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info-Tech</a>
+              <div class="dropdown-menu" aria-labelledby="services-dropdown">
+                <a class="dropdown-item" href="infotech.html">Overview</a>
+                <a class="dropdown-item" href="kohanew.html">Koha ILS</a>
+                <a class="dropdown-item" href="formpage.html">Info Tech Tools</a>
+                <a class="dropdown-item" href="formpageresults.php">Tools Survey Results</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="services-dropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Interests</a>
+              <div class="dropdown-menu" aria-labelledby="services-dropdown">
+                <a class="dropdown-item" href="interestsmain.html">NJ Wildlife</a>
+                <a class="dropdown-item" href="interestsbear.html">Bears</a>
+                <a class="dropdown-item" href="interestswolf.html">Wolves</a>
+                <a class="dropdown-item" href="interestsfox.html">Foxes</a>
+              </div>
+            </div>
+            <a class="nav-item nav-link here" href="aboutme.html">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+        <main>
+          <h1>Who is Maaz?</h1>
+          <div class="row">
+              <div class="col-md-8">
+                  <p>I am a Master of Information student here at Rutgers pursuing a dual concentration in Data Science and IT Management. After undergrad I decided I wanted to further my education (particularly in programming) and this class has provided me with a great foundation! When I'm not working or studying, you can find me at national parks, rock climbing gyms, basketball courts or playing with my cat! When it comes to books, my favorite genre is definitely fantasy (although sci-fi is a close second). I've been reading fantasy novels ever since I read Harry Potter, since then I am enchanted with the world of wizards and warriors. My favorite book of all time is The Hobbit and I hope to visit New Zealand one day to see the Shire in person!</p>
+                  <br>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                      <a class="nav-link active show" data-toggle="tab" href="#item1">Career</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#item2">Fun</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#item3">Animals</a>
+                      </li>
+                  </ul>
+  
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                      <div id="item1" class="container tab-pane active show"><br>
+                      <h2>Career</h2>
+                      <p>I spent most of my life in central New Jersey. I attended East Brunswick High School(10 minutes away from Rutgers). I went to NJIT for my undergrad to study Fin-Tech. It's over there I learned the practice of data analytics which is still a very interesting subject to me. After graduation I worked at a digital marketing company as a data analyst. Since then, I decided I wanted to learn more about technology, data and programming, which is why I decided to pursue my Masters here at Rutgers! I look forward to learning more (inside and outside the classroom) and am very excited to see where my journey takes me!</p>
+                      </div>
+                      <div id="item2" class="container tab-pane fade"><br>
+                          <h2>Fun</h2>
+                          <p>When I'm not learning or working, I love to connect with nature! My favorite aspect of nature is my very own kitty Pareesa. She is a Persian cat with heterochromia! She is usually my number one study buddy and the best stress reliever on the planet! I also love exploring trails and parks in central jersey. Here are some pictures of my adventures!</p>
+                          <figure>
+                              <img src="majesty.JPG" name="img1" width="225" height="300" alt="cat" align="left" onmouseover="document.img1.src = image_1_over.src" onmouseout="document.img1.src = image_1.src">
+                          </figure>
+                          <figure>
+                              <img src="turtles.JPG" name="img2" width="225" height="300" alt="nature" align="center" onmouseover="document.img2.src = image_2_over.src" onmouseout="document.img2.src = image_2.src">
+                          </figure>
+                      </div>
+                      <div id="item3" class="container tab-pane fade"><br>
+                          <h2>Wolves!</h2>
+                          <p>This is my screencast discussing the only place you could find wolves in the state of New Jersey!</p>
+                          <iframe width="350" height="250" src="https://www.youtube.com/embed/Qiq-UPo6zNs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                <aside>
+                    <h3 style="font-size: 27px">Travel Bucket List</h3>
+                    <ul class=  style="padding-left:20px">
+                        <li><span style="text-decoration:underline">Cascade Mountains</span>, Washington</li>
+                        <li><span style="text-decoration:underline">Grand Canyon</span>, Arizona</li>
+                        <li><span style="text-decoration:underline">Maroon Bells</span>, Colorado</li>
+                        <li><span style="text-decoration:underline">Joshua Tree</span>, California</li>
+                    </ul>
+                </aside>
+                  </div>
+              </div></main>
+    </div>
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2023 Maaz Khalil's IT Website. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p><a href="#" class="text-white">Home</a> | <a href="#" class="text-white">Info-Tech</a> | <a href="#" class="text-white">Interests</a> | <a href="#" class="text-white">About</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
+    </html>
+
